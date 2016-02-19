@@ -1,3 +1,4 @@
+package ca.mcgill.comp303.exercise05.composite;
 
 public class CompositePatternDemo
 {

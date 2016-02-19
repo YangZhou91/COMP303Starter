@@ -1,3 +1,4 @@
+package ca.mcgill.comp303.exercise02.countryexample;
 import java.util.Comparator;
 
 public class Country implements Comparable<Country>

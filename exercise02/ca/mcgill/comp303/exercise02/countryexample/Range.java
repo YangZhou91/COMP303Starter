@@ -1,3 +1,4 @@
+package ca.mcgill.comp303.exercise02.countryexample;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 

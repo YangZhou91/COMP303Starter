@@ -1,5 +1,10 @@
 package labtest01;
 
+import java.util.Arrays;
+import java.util.Collections;
+
+import com.sun.xml.internal.bind.v2.runtime.unmarshaller.XsiNilLoader.Array;
+
 /**
  * Utility class with a driver program and some 
  * sample items and inventories.
@@ -23,5 +28,18 @@ public final class Driver
 		{
 			System.out.println(item.getName());
 		}
+		
+		System.out.println(" ");
+		
+		Arrays.sort(ITEMS);
+		for (Item item : ITEMS)
+		{
+			System.out.println(item.getName() + ": " + item.getPrice());
+		}
+		
+		
+		Inventory aInventory = new Inventory("labTest1");
+		aInventory.stock(ITEM_CEREAL, 10);
+		aInventory.dispose(ITEM_CEREAL, 50);
 	}
 }
