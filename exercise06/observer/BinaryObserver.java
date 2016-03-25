@@ -11,7 +11,6 @@ public class BinaryObserver extends Observer
 	@Override
 	public void update()
 	{
-		// TODO Auto-generated method stub
 		System.out.print("Binary String: " + Integer.toBinaryString(subject.getState()));
 	}
 
