@@ -1,4 +1,4 @@
-
+package overriding;
 public class Cat extends Animal
 {
 	public static void testClassMethod()

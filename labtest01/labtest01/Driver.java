@@ -11,9 +11,9 @@ import com.sun.xml.internal.bind.v2.runtime.unmarshaller.XsiNilLoader.Array;
  */
 public final class Driver
 {
-	private static final Item ITEM_CEREAL = new Item("Cereal", 1, 200);
-	private static final Item ITEM_JAM = new Item("Jam", 2, 400);
-	private static final Item ITEM_BUTTER = new Item("Butter", 3, 250);
+	private static final Item ITEM_CEREAL = new Bucket("Cereal", 1, 200);
+	private static final Item ITEM_JAM = new Bucket("Jam", 2, 400);
+	private static final Item ITEM_BUTTER = new Bucket("Butter", 3, 250);
 	
 	private static final Item[] ITEMS = { ITEM_CEREAL, ITEM_JAM, ITEM_BUTTER };
 	
@@ -39,7 +39,11 @@ public final class Driver
 		
 		
 		Inventory aInventory = new Inventory("labTest1");
+		aInventory.addObserver(new InventoryAdditionObserver(aInventory));
 		aInventory.stock(ITEM_CEREAL, 10);
 		aInventory.dispose(ITEM_CEREAL, 50);
+		
+	
+		
 	}
 }

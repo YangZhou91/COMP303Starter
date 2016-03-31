@@ -3,12 +3,16 @@ package labtest01;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map.Entry;
+import java.util.Observable;
+import java.util.Observer;
 
 /**
  * Represents the inventory of a 
  * physical grocery store.
  */
-public class Inventory
+// Observer, monitor add or remove item
+
+public class Inventory extends Observable
 {
 	private final String aName; // Unique
 	private final HashMap<Item, Integer> aInventory = new HashMap<>();
@@ -21,6 +25,7 @@ public class Inventory
 	public Inventory(String pName)
 	{
 		aName = pName;
+		
 	}
 	
 	/**
@@ -44,7 +49,13 @@ public class Inventory
 			amount = aInventory.get(pItem);
 		}
 		amount += pQuantity;
+		
 		aInventory.put(pItem, amount);
+		
+		
+		//Observer
+		setChanged();
+		notifyObservers(pItem);
 	}
 	
 	/**
@@ -62,6 +73,10 @@ public class Inventory
 		int amount = aInventory.get(pItem);
 		amount -= pQuantity;
 		aInventory.put(pItem, amount);
+		
+		// Observer 
+		setChanged();
+		notifyObservers(pItem);
 	}
 	
 	/**
@@ -91,4 +106,6 @@ public class Inventory
 		
 		return total;
 	}
+
+	
 }

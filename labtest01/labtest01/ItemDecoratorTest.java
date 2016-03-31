@@ -14,7 +14,7 @@ public class ItemDecoratorTest
 	@Before
 	public void setUp() throws Exception
 	{
-		item = new Item("Cereal", 1, 200);
+		item = new Bucket("Cereal", 1, 200);
 		itemD = new ItemDecorator(item);
 	}
 

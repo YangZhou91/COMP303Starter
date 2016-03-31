@@ -1,13 +1,18 @@
 package labtest01;
 
 import java.util.Comparator;
+import java.util.Observable;
+
+
 
 /**
  * An item in a grocery store: 
  * Jar of peanut butter, package of pasta,
  * whatever.
  */
-public class Item implements Comparator<Item>, Comparable<Item>, ItemInterface
+// Make abstract 
+// shoval, bucket extends abstract item overwrite item name 
+public abstract class Item extends Observable implements Comparator<Item>, Comparable<Item>, ItemInterface 
 {
 	private final String aName;
 	private final int aId;
